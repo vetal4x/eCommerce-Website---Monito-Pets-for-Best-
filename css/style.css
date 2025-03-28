@@ -27,7 +27,7 @@
 body {
   font-family: "SVN-Gilroy", sans-serif;
   font-size: 16px;
-  background: #fff;
+  background: var(--neutral00);
   overflow-x: hidden;
 }
 
@@ -235,25 +235,22 @@ img {
   background-color: var(--neutral00);
 }
 
-.card__listing .pre-card__listing {
+.pre-section {
   display: flex;
   justify-content: space-between;
   margin-bottom: 36px;
 }
 
-.card__listing .precard__listing .pre-card__listing__left {
+.pre-section .pre-section__left {
   display: flex;
   flex-direction: column;
 }
 
-.card__listing .pre-card__listing .pre-card__listing__right {
+.pre-section .pre-section__right {
   margin-top: 18px;
 }
 
-.card__listing
-  .pre-card__listing
-  .pre-card__listing__left
-  .pre-card__listing__title {
+.pre-section .pre-section__left .pre-section__title {
   display: block;
   font-size: 16px;
   font-weight: 500;
@@ -262,10 +259,7 @@ img {
   text-align: left;
 }
 
-.card__listing
-  .pre-card__listing
-  .pre-card__listing__left
-  .pre-card__listing__subtitle {
+.pre-section .pre-section__left .pre-section__subtitle {
   display: block;
   color: var(--dark-blue);
   font-size: 24px;
@@ -448,6 +442,7 @@ img {
 .carousel .carousel__sellers {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -459,6 +454,172 @@ img {
   letter-spacing: 0%;
   text-align: left;
   text-transform: capitalize;
+}
+
+/* Blog */
+
+.blog {
+  background-color: var(--neutral00);
+  padding: 60px 130px;
+}
+
+.blog .blog__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(364px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.blog .blog__cards .blog__card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 4px 28px -2px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.blog .blog__cards .blog__card .blog__img {
+  border-radius: 12px;
+}
+
+.blog .blog__cards .blog__card .blog__text {
+  margin: 8px;
+}
+
+.blog .blog__cards .blog__card .blog__text .blog__label {
+  display: inline-block;
+  max-width: 89px;
+  text-wrap: nowrap;
+  color: #fff;
+  background: var(--blue-sea);
+  border-radius: 28px;
+  padding: 2px 10px 2px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.blog .blog__cards .blog__card .blog__text .blog__title {
+  color: var(--neutral100);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 10px 0 6px;
+}
+
+.blog .blog__cards .blog__card .blog__text .blog__subtitle {
+  color: var(--neutral80);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* Footer */
+
+.footer {
+  background: linear-gradient(
+    134.45deg,
+    rgb(252, 238, 213) 6.444%,
+    rgb(252, 238, 213) 78.484%,
+    rgb(255, 231, 186) 104.448%
+  );
+  padding: 80px 130px 0;
+}
+
+.footer .subscription {
+  display: grid;
+  grid-template-columns: 3fr 6fr;
+  gap: 20px;
+  background-color: var(--dark-blue);
+  padding: 32px;
+  border: 1px;
+  border-radius: 16px;
+}
+
+.footer .subscription .subscription__title {
+  color: var(--neutral00);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-transform: capitalize;
+  text-wrap: nowrap;
+}
+
+.footer .subscription .subscription__form {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.footer .subscription .subscription__form .email__field {
+  color: var(--neutral40);
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--neutral40);
+  padding: 14px 28px;
+}
+
+.footer .subscription .subscription__form .subscription__btn {
+  color: var(--neutral00);
+  background: var(--dark-blue);
+  text-wrap: nowrap;
+  border: 1px;
+  border-radius: 8px;
+  padding: 14px 28px 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer .navigation {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--neutral20);
+}
+
+.footer .navigation .navbar__footer ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.footer .navigation .navbar__footer ul li {
+  color: var(--neutral100);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.footer .navigation .social {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 40px;
+}
+
+.footer .footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.footer .footer__bottom .footer__bottom__text {
+  color: var(--neutral60);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0%;
+}
+
+.footer .footer__bottom .bottom__text__right {
+  display: flex;
+  gap: 40px;
 }
 @font-face {
   font-family: "SVN-Gilroy";
