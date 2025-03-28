@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="css/style.css" />
     <title>Monito Pets for Best</title>
   </head>
@@ -67,14 +73,14 @@
     <!-- Card listing -->
 
     <section class="card__listing">
-      <div class="pre-card__listing">
-        <div class="pre-card__listing__left">
-          <span class="pre-card__listing__title">Whats new?</span>
-          <span class="pre-card__listing__subtitle"
+      <div class="pre-section">
+        <div class="pre-section__left">
+          <span class="pre-section__title">Whats new?</span>
+          <span class="pre-section__subtitle"
             >Take A Look Of Some Of Our Pets</span
           >
         </div>
-        <div class="pre-card__listing__right">
+        <div class="pre-section__right">
           <a href="#" class="btn btn__secondary"
             >View more&nbsp;&nbsp;&nbsp;<img
               src="images/arrow-right.svg"
@@ -222,14 +228,14 @@
     <!-- Our Product -->
 
     <section class="card__listing">
-      <div class="pre-card__listing">
-        <div class="pre-card__listing__left">
-          <span class="pre-card__listing__title"
+      <div class="pre-section">
+        <div class="pre-section__left">
+          <span class="pre-section__title"
             >Hard to choose right products for your pets?</span
           >
-          <span class="pre-card__listing__subtitle">Our Products</span>
+          <span class="pre-section__subtitle">Our Products</span>
         </div>
-        <div class="pre-card__listing__right">
+        <div class="pre-section__right">
           <a href="#" class="btn btn__secondary"
             >View more&nbsp;&nbsp;&nbsp;<img
               src="images/arrow-right.svg"
@@ -439,4 +445,117 @@
       </div>
     </div>
 
+    <!-- Blog -->
 
+    <div class="blog">
+      <div class="pre-section">
+        <div class="pre-section__left">
+          <span class="pre-section__title">You already know ?</span>
+          <span class="pre-section__subtitle">Useful pet knowledge</span>
+        </div>
+        <div class="pre-section__right">
+          <a href="#" class="btn btn__secondary"
+            >View more&nbsp;&nbsp;&nbsp;<img
+              src="images/arrow-right.svg"
+              alt="arrow-right"
+          /></a>
+        </div>
+      </div>
+      <div class="blog__cards">
+        <div class="blog__card">
+          <img src="images/blog/blog-1.png" alt="blog-1" class="blog__img" />
+
+          <div class="blog__text">
+            <span class="blog__label">Pet knowledge</span>
+            <h3 class="blog__title">
+              What is a Pomeranian? How to Identify Pomeranian Dogs
+            </h3>
+            <p class="blog__subtitle">
+              The Pomeranian, also known as the Pomeranian (Pom dog), is always
+              in the top of the cutest pets. Not only that, the small, lovely,
+              smart, friendly, and skillful circus dog breed.
+            </p>
+          </div>
+        </div>
+        <div class="blog__card">
+          <img src="images/blog/blog-2.png" alt="blog-2" class="blog__img" />
+          <div class="blog__text">
+            <span class="blog__label">Pet knowledge</span>
+            <h3 class="blog__title">Dog Diet You Need To Know</h3>
+            <p class="blog__subtitle">
+              Dividing a dog's diet may seem simple at first, but there are some
+              rules you should know so that your dog can easily absorb the
+              nutrients in the diet. For those who are just starting to raise
+              dogs, especially newborn puppies with relatively weak resistance.
+            </p>
+          </div>
+        </div>
+        <div class="blog__card">
+          <img src="images/blog/blog-3.png" alt="blog-3" class="blog__img" />
+          <div class="blog__text">
+            <span class="blog__label">Pet knowledge</span>
+            <h3 class="blog__title">
+              Why Dogs Bite and Destroy Furniture and How to Prevent It
+              Effectively
+            </h3>
+            <p class="blog__subtitle">
+              Dog bites are common during development. However, no one wants to
+              see their furniture or important items being bitten by a dog.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="subscription">
+        <span class="subscription__title"
+          >Register now so you don't miss<br />
+          our programs</span
+        >
+        <form action="send-email.php" method="post" class="subscription__form">
+          <input
+            type="email"
+            class="email__field"
+            id="email"
+            name="email"
+            required
+            placeholder="Enter your Email"
+          />
+          <button type="submit" class="subscription__btn">Subscribe Now</button>
+        </form>
+      </div>
+      <div class="navigation">
+        <nav class="navbar__footer">
+          <ul>
+            <li><a href="#" class="nav__buttons">Home</a></li>
+            <li><a href="#" class="nav__buttons">Category</a></li>
+            <li><a href="#" class="nav__buttons">About</a></li>
+            <li><a href="#" class="nav__buttons">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+          <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+          <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+          <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="bottom__text__left">
+          <span class="footer__bottom__text"
+            >© 2022 Monito. All rights reserved.</span
+          >
+        </div>
+        <a href="#" class="logo"
+          ><img src="images/logo.png" alt="logo" class="footer__logo"
+        /></a>
+        <div class="bottom__text__right">
+          <a href="#" class="footer__bottom__text">Terms of Service</a>
+          <a href="#" class="footer__bottom__text">Privacy Policy</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
