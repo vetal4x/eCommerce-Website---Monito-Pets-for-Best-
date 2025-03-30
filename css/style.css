@@ -51,7 +51,7 @@ img {
   background: url(../images/hero-banner.png) center center/cover no-repeat;
 }
 
-.main .menu a img {
+.logo {
   max-width: max-content;
   display: inline-block;
   overflow: visible;
@@ -125,12 +125,15 @@ img {
 }
 
 .navbar ul li a:hover {
-  border-bottom: 3px solid rgb(0, 52, 89);
-  transition: 0.5s;
+  border-bottom: 2px solid rgb(0, 52, 89);
+  transition: 1s;
 }
 
 /* Search */
 
+.mobile__search {
+  display: none;
+}
 .search {
   display: inline-flex;
   width: 280px;
@@ -341,6 +344,11 @@ img {
 .card__listing .cards .card .gift .gift__dot {
   margin: 0 10px;
 }
+
+.card__listing .after__section__btn {
+  display: none;
+  margin-top: 16px;
+}
 /* Banner */
 
 .banner {
@@ -514,6 +522,9 @@ img {
   line-height: 20px;
 }
 
+.blog .after__section__btn {
+  display: none;
+}
 /* Footer */
 
 .footer {
@@ -544,7 +555,7 @@ img {
   letter-spacing: 0%;
   text-align: left;
   text-transform: capitalize;
-  text-wrap: nowrap;
+  text-wrap: wrap;
 }
 
 .footer .subscription .subscription__form {
@@ -627,3 +638,297 @@ img {
   font-style: normal;
   font-weight: normal;
 }
+
+/* Hamburger Button */
+
+.hamburger-button {
+  display: none;
+  background: none;
+  border: none;
+  padding: 9px 7px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Mobile Menu */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -70vw;
+  width: 70vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: var(--mon-yellow);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  transition: left 0.3s ease-in-out;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+.mobile-menu ul {
+  margin-top: 100px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.mobile-menu ul li {
+  width: 100%;
+  border-bottom: 2px solid var(--dark-blue-primary);
+  text-align: center;
+  padding-bottom: 26px;
+}
+
+.mobile-menu ul li a {
+  color: var(--dark-blue-primary);
+  font-size: 20px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+
+@media (max-width: 480px) {
+  .navbar,
+  .search,
+  .currency,
+  .header__button {
+    display: none;
+  }
+
+  .main {
+    padding: 0;
+    width: 100vw;
+    height: 100%;
+    background: url(../images/hero-banner-mobile.png) no-repeat;
+    background-size: cover;
+    padding-top: 47px;
+  }
+  .menu {
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 14px 0 10px;
+  }
+
+  .hamburger-button {
+    display: block;
+  }
+
+  .mobile__search {
+    display: block;
+    width: 23px;
+    height: 23px;
+  }
+
+  .hero {
+    margin: 0;
+    padding: 35px 16px 411px;
+    width: 100%;
+  }
+
+  .hero__title {
+    font-size: 46px;
+    line-height: 60px;
+  }
+
+  .hero__subtitle {
+    font-size: 28px;
+    line-height: 38px;
+  }
+
+  .hero__text {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .hero__buttons {
+    justify-content: start;
+    gap: 16;
+  }
+
+  .card__listing {
+    padding: 40px 16px;
+  }
+
+  .card__listing .cards {
+    padding: 0 8px;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(169px, 1fr));
+  }
+
+  .card__listing .pre-section .pre-section__left .pre__section__title {
+   font-size: 14px;
+    line-height: 20px;
+  }
+
+  .card__listing .pre-section .pre-section__left .pre__section__subtitle {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .card__listing .pre-section .pre-section__right {
+    display: none;
+  }
+
+  .card__listing .cards .card .card__name {
+  font-size: 14px;
+  line-height: 20px;
+  }
+
+  .card__listing .cards .card .price {
+  font-size: 16px;
+  line-height: 24px;
+  }
+
+  .card__listing .after__section__btn {
+  display: block;
+  }
+
+  .btn__secondary {
+    max-width: 100%;
+  }
+
+  .banner {
+  background: url(../images/banner-mobile.png);
+    background-size: cover;
+    height: 100%;
+    margin: 0 16px;
+    padding: 0;
+  }
+
+  .banner .banner__content {
+    width: 100%;
+    padding: 32px 28px 372px;
+    text-align: center;
+  }
+
+  .banner .banner__content .banner__title {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  .banner .banner__content .banner__subtitle {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .banner .banner__content .banner__text {
+    margin: 12px 0 32px;
+  }
+
+  .banner .banner__content .btn {
+    font-weight: 500;
+    margin: 0;
+    width: 100%;
+    height: 48px;
+    
+  }
+
+  .banner .banner__content .btn__secondary {
+  border: 1.5px solid var(--dark-blue-primary);
+  }
+
+  .banner .banner__buttons {
+    margin: 0;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .carousel {
+    display: none;
+  }
+
+  .banner__left {
+    display: none;
+  }
+
+  .our__products {
+    display: none;
+  }
+  .blog {
+    padding: 40px 16px 0;
+  }
+
+  .blog .pre-section {
+    margin-bottom: 20px;
+  }
+
+  .blog .pre-section .pre-section__right {
+    display: none;
+  }
+
+  .blog .pre-section .pre-section__title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .blog .pre-section .pre-section__subtitle {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .blog .blog__cards .blog__card .blog__text {
+    padding: 8px;
+    margin: 0;
+    margin-top: 5px;
+  }
+
+  .blog .after__section__btn {
+    display: block;
+    margin: 20px 0 40px;
+  }
+
+  .footer {
+    padding: 40px 16px 20px;
+  }
+
+  .footer .subscription {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 16px;
+  }
+
+  .footer .subscription .subscription__title {
+    font-size: 20px;
+    line-height: 32px;
+    padding: 0;
+  }
+
+  .footer .subscription .subscription__form {
+    margin-top: 16px;
+    flex-direction: column;
+  }
+
+  .footer .navigation {
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .footer .navigation .social {
+    padding: 0 76px;
+    margin-top: 20px;
+  }
+
+  .footer .footer__bottom {
+    flex-direction: column;
+    padding: 36px 0 20px;
+  }
+
+  .footer .footer__bottom .bottom__text__left {
+    order: 3; 
+  }
+
+  .footer .footer__bottom .bottom__text__right {
+    order: 2; 
+    margin: 32px 0 8px;
+    gap: 12px;
+  }
+
+  .footer .footer__bottom a.logo {
+    order: 1; 
+  }
