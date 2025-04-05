@@ -23,8 +23,6 @@
   --neutral60: rgb(102, 116, 121);
   --neutral80: rgb(36, 43, 51);
   --neutral100: rgb(0, 23, 31);
-
-
 }
 body {
   font-family: "SVN-Gilroy", sans-serif;
@@ -57,11 +55,16 @@ img {
   max-width: max-content;
   display: inline-block;
   overflow: visible;
+  transition: 0.8s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
 }
 
 /* Buttons */
 
-.btn {
+.button {
   max-width: 203px;
   height: 44px;
   display: flex;
@@ -74,21 +77,21 @@ img {
   color: #fff;
   border: none;
   border-radius: 57px;
+  cursor: pointer;
   font-family: "SVN-Gilroy", sans-serif;
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
   letter-spacing: 0%;
-	transition: all 0.3s;
+  transition: all 0.3s;
 }
 
-.btn:hover {
-	opacity: 95% ;
-	transform: scale(0.97);
+.button:hover {
+  opacity: 95%;
+  transform: scale(0.97);
 }
 
-
-.btn__secondary {
+.button__secondary {
   color: var(--dark-blue);
   font-weight: 500px;
   background-color: transparent;
@@ -96,7 +99,7 @@ img {
   text-wrap: nowrap;
 }
 
-.btn a {
+.button a {
   margin: 14px 28px 10px;
 }
 
@@ -130,7 +133,6 @@ img {
 }
 
 .navbar ul li a {
-  transition: 0.4s;
   color: var(--dark-blue);
   font-size: 16px;
   text-decoration: none;
@@ -272,6 +274,7 @@ img {
 .pre-section .pre-section__left {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .pre-section .pre-section__right {
@@ -288,7 +291,7 @@ img {
 }
 
 .pre-section .pre-section__left .pre-section__subtitle {
-  display: block;
+  display: inline-block;
   color: var(--dark-blue);
   font-size: 24px;
   font-weight: 700;
@@ -296,6 +299,23 @@ img {
   letter-spacing: 0%;
   text-align: left;
   text-transform: capitalize;
+  position: relative;
+  transition: 0.4s;
+}
+
+.pre-section .pre-section__left .pre-section__subtitle::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2.5px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--dark-blue);
+  transition: all 0.4s;
+}
+.pre-section .pre-section__left .pre-section__subtitle:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 .card__listing .cards {
@@ -313,6 +333,12 @@ img {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+  transition: 0.4s;
+}
+
+.card__listing .cards .card:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .card__listing .cards .card .card__description {
@@ -370,7 +396,7 @@ img {
   margin: 0 10px;
 }
 
-.card__listing .after__section__btn {
+.card__listing .after__section__button {
   display: none;
   margin-top: 16px;
 }
@@ -489,11 +515,10 @@ img {
   text-transform: capitalize;
 }
 
-
 .slider {
   overflow: hidden;
   padding: 15px 0;
-  background: white;
+  background: var(--neutral00);
   white-space: nowrap;
   position: relative;
 }
@@ -510,12 +535,20 @@ img {
 
 .slider:before {
   left: 0;
-  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0),
+    var(--neutral00)
+  );
 }
 
 .slider:after {
   right: 0;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    var(--neutral00)
+  );
 }
 
 .slider:hover .slider__sellers {
@@ -526,18 +559,6 @@ img {
   display: inline-block;
   animation: 10s slide infinite linear;
 }
-
-
-@keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-
 
 /* Blog */
 
@@ -597,7 +618,7 @@ img {
   line-height: 20px;
 }
 
-.blog .after__section__btn {
+.blog .after__section__button {
   display: none;
 }
 /* Footer */
@@ -650,7 +671,7 @@ img {
   padding: 14px 28px;
 }
 
-.footer .subscription .subscription__form .subscription__btn {
+.footer .subscription .subscription__form .subscription__button {
   color: var(--neutral00);
   background: var(--dark-blue);
   text-wrap: nowrap;
@@ -679,6 +700,13 @@ img {
   font-size: 16px;
   font-weight: 500;
   line-height: 24px;
+  transition: 0.1s;
+}
+
+.footer .navigation .navbar__footer ul li:hover {
+  transform: scale(0.97);
+  border: 30px;
+  border-image: url(../images/paw.svg);
 }
 
 .footer .navigation .social {
@@ -686,6 +714,32 @@ img {
   justify-content: space-between;
 
   gap: 40px;
+}
+
+.footer .navigation .social .fa-facebook:hover {
+transition: 0.5s;
+transform: scale(1.05);
+color: #4267B2;
+}
+
+.footer .navigation .social .fa-twitter:hover {
+transition: 0.5s;
+transform: scale(1.05);
+color: #1DA1F2;
+}
+
+.footer .navigation .social .fa-instagram:hover {
+transition: 0.5s;
+transform: scale(1.05);
+background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.footer .navigation .social .fa-youtube:hover {
+transition: 0.5s;
+transform: scale(1.05);
+color: #FF0000;
 }
 
 .footer .footer__bottom {
@@ -716,7 +770,7 @@ img {
 
 /* Hamburger Button */
 
-.hamburger-button {
+.hamburger__button {
   display: none;
   background: none;
   border: none;
@@ -727,7 +781,7 @@ img {
 
 /* Mobile Menu */
 
-.mobile-menu {
+.mobile__menu {
   position: fixed;
   top: 0;
   left: -70vw;
@@ -739,11 +793,11 @@ img {
   transition: left 0.3s ease-in-out;
 }
 
-.mobile-menu.active {
+.mobile__menu.active {
   left: 0;
 }
 
-.mobile-menu ul {
+.mobile__menu ul {
   margin-top: 100px;
 
   display: flex;
@@ -752,20 +806,19 @@ img {
   gap: 30px;
 }
 
-.mobile-menu ul li {
+.mobile__menu ul li {
   width: 100%;
   border-bottom: 2px solid var(--dark-blue-primary);
   text-align: center;
   padding-bottom: 26px;
 }
 
-.mobile-menu ul li a {
+.mobile__menu ul li a {
   color: var(--dark-blue-primary);
   font-size: 20px;
   font-weight: 600;
   transition: 0.3s;
 }
-
 
 @media (max-width: 480px) {
   .navbar,
@@ -789,7 +842,7 @@ img {
     padding: 2px 14px 0 10px;
   }
 
-  .hamburger-button {
+  .hamburger__button {
     display: block;
   }
 
@@ -836,7 +889,7 @@ img {
   }
 
   .card__listing .pre-section .pre-section__left .pre__section__title {
-   font-size: 14px;
+    font-size: 14px;
     line-height: 20px;
   }
 
@@ -850,25 +903,25 @@ img {
   }
 
   .card__listing .cards .card .card__name {
-  font-size: 14px;
-  line-height: 20px;
+    font-size: 14px;
+    line-height: 20px;
   }
 
   .card__listing .cards .card .price {
-  font-size: 16px;
-  line-height: 24px;
+    font-size: 16px;
+    line-height: 24px;
   }
 
-  .card__listing .after__section__btn {
-  display: block;
+  .card__listing .after__section__button {
+    display: block;
   }
 
-  .btn__secondary {
+  .button__secondary {
     max-width: 100%;
   }
 
   .banner {
-  background: url(../images/banner-mobile.png);
+    background: url(../images/banner-mobile.png);
     background-size: cover;
     height: 100%;
     margin: 0 16px;
@@ -895,16 +948,15 @@ img {
     margin: 12px 0 32px;
   }
 
-  .banner .banner__content .btn {
+  .banner .banner__content .button {
     font-weight: 500;
     margin: 0;
     width: 100%;
     height: 48px;
-    
   }
 
-  .banner .banner__content .btn__secondary {
-  border: 1.5px solid var(--dark-blue-primary);
+  .banner .banner__content .button__secondary {
+    border: 1.5px solid var(--dark-blue-primary);
   }
 
   .banner .banner__buttons {
@@ -952,7 +1004,7 @@ img {
     margin-top: 5px;
   }
 
-  .blog .after__section__btn {
+  .blog .after__section__button {
     display: block;
     margin: 20px 0 40px;
   }
@@ -995,15 +1047,63 @@ img {
   }
 
   .footer .footer__bottom .bottom__text__left {
-    order: 3; 
+    order: 3;
   }
 
   .footer .footer__bottom .bottom__text__right {
-    order: 2; 
+    order: 2;
     margin: 32px 0 8px;
     gap: 12px;
   }
 
   .footer .footer__bottom a.logo {
-    order: 1; 
+    order: 1;
   }
+}
+
+/* Animations */
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
