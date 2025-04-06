@@ -824,7 +824,6 @@ img {
 /* Laptop */
 
 @media (max-width: 1280px) {
-  
   .header__button {
     display: none;
   }
@@ -860,7 +859,6 @@ img {
     align-items: end;
     justify-content: center;
   }
-
 }
 
 /* Netbook */
@@ -956,7 +954,7 @@ img {
     width: 100%;
   }
 
-  .hero .hero__subtitle {
+  .hero__subtitle {
     font-size: 42px;
   }
 
